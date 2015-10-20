@@ -1,7 +1,7 @@
 $red: rgba(255, 0, 0, 1);
 
 h1 {
-    color: $red
+    color: blue
 }
 
 body {background: PaleGreen;
@@ -10,4 +10,14 @@ body {background: PaleGreen;
 }
 
 
+.tussi{
+        padding: 20px;
+        button{margin-left: 20px}
+}
 
+.bussi{
+        padding: 20px;
+
+        color: red
+
+}
