@@ -23,6 +23,10 @@ const HelloworldApp = React.createClass({
                 names: data
             });
         });
+
+        api.getRavintoarvot().then((data) => {
+            console.log(data);
+        });
     },
     render: function(){
         const names = this.state.names;

@@ -6,9 +6,14 @@ const Greeter = React.createClass({
         console.log(this.props);
 
         return(
+
+
+
             <h2>
-                Hellooo {name}
+                Resepti {name}
             </h2>
+
+
             );
 
     },

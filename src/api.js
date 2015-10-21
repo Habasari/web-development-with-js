@@ -1,7 +1,15 @@
 import axios from 'axios';
-export default{
+
+export default {
     getTussit: function(){
         return axios.get('/api/tussi').then((response)=>{
+            return response.data;
+        });
+    },
+
+
+    getRavintoarvot: function() {
+        return axios.get('/api/ravintoarvot').then((response)=>{
             return response.data;
         });
     }
