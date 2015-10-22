@@ -5,15 +5,19 @@ import Counter from './Counter'
 import axios from 'axios';
 import HelloWorld from './HelloWorld'
 import api from '../api';
+import ravintoarvot from './ravintoarvot'
+import tulostus from './tulostus'
+import { Link } from 'react-router'
 
 
 
 const HelloworldApp = React.createClass({
-        getInitialState: function(){
+    getInitialState: function(){
         return {
                 count: 0,
                 name: 'pekkis',
-                names: []
+                names: [],
+                ravintoarvot: []
         };
     },
 
@@ -22,25 +26,42 @@ const HelloworldApp = React.createClass({
             this.setState({
                 names: data
             });
-        });
+        }),
 
         api.getRavintoarvot().then((data) => {
-            console.log(data);
+            this.setState({
+                ravintoarvot: data
+
+            });
         });
     },
     render: function(){
         const names = this.state.names;
 
+
         return (
             <div className= "tussi">
-                <h1>Otsikko</h1>
+                <h1>Reseptikirja</h1>
 
                 {names.map((name, key)  =>
 
-                    <HelloWorld key={key} name={name}/>
+                <HelloWorld key={key} name={name}/>
 
 
-                 )}
+                 )},
+
+                {this.state.ravintoarvot.map((ravintoarvo,key)  =>
+
+                <div>
+                <Link to={`/ravintoarvo/${ravintoarvo.id}`}>
+                {ravintoarvo.nimi}
+                </Link>
+                </div>
+
+                 )},
+
+
+
                 <Counterizer
                 count = {this.state.count}
                 onincrementCounter = {this.incrementCounter}

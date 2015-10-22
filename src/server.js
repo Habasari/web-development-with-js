@@ -9,6 +9,8 @@ var config = require('../webpack.config.dev');
 var app = express();
 var compiler = webpack(config);
 
+import { I, List } from 'immutable';
+
 app.use(require('webpack-dev-middleware')(compiler, {
   noInfo: true,
   publicPath: config.output.publicPath
@@ -20,9 +22,10 @@ var ravintoarvot = {
     ravintoarvot: [
         {
             id: 1,
-            nimi: 'Sokeri',
-            kalorit: '500kcal',
-            terveellisyysAste: '-1000'
+            nimi: 'mössö',
+            ainekset: ['Sokeri ', 'Suola ', 'Maksa ', 'Kala '],
+            ravintoarvo: '500kcal',
+            valmistus: 'Kamat pataan, keitto 20min ja valmis'
         },
         {
             id: 2,
@@ -47,13 +50,13 @@ var ravintoarvot = {
             nimi: 'Maksa',
             kalorit: '230kcal',
             terveellisyysAste: '4'
-        }
+        },
         {
             id: 6,
             nimi: 'Suola',
             kalorit: '30kcal',
             terveellisyysAste: '2'
-        }
+        },
         {
             id: 7,
             nimi: 'Vehnäjauho',
@@ -69,7 +72,18 @@ app.get('/api/ravintoarvot', function(req, res, next) {
 
 
 app.get('/api/ravintoarvot/:id', function(req, res, next) {
-    res.send(ravintoarvot[req.params.id]); // TOOD: Tämä ei vielä täysin toimi.
+    console.log(req.params.id);
+
+
+    res.send(
+        List(ravintoarvot.ravintoarvot)
+            .filter((r) => r.id == req.params.id)
+            .first()
+    );
+});
+
+app.post('/api/resepti', function(req, res, next) {
+    nimet.push(req.params.nimi);
 });
 
 app.get('/api/tussi', function(req, res, next) {

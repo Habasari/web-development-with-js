@@ -10,7 +10,7 @@ export default {
 
     getRavintoarvot: function() {
         return axios.get('/api/ravintoarvot').then((response)=>{
-            return response.data;
+            return response.data.ravintoarvot;
         });
     }
 };
