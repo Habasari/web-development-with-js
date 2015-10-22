@@ -53,6 +53,7 @@ const HelloworldApp = React.createClass({
                 {this.state.ravintoarvot.map((ravintoarvo,key)  =>
 
                 <div>
+
                 <Link to={`/ravintoarvo/${ravintoarvo.id}`}>
                 {ravintoarvo.nimi}
                 </Link>

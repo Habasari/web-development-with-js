@@ -9,7 +9,8 @@ const tulostus = React.createClass({
 
 
             <h2>
-                {id}
+
+            {id}
             </h2>
 
 

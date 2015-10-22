@@ -2,7 +2,7 @@ import React from 'react';
 
 const Greeter = React.createClass({
     render: function(){
-        const {name} = this.props.params;
+        const name = this.props.params.name;
         console.log(this.props);
 
         return(

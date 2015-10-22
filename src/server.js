@@ -30,36 +30,42 @@ var ravintoarvot = {
         {
             id: 2,
             nimi: 'Olut',
+            ainekset: ['Hiiva \t', 'Mallas \n', 'Vesi  ', 'Sokeri '],
             kalorit: '5000kcal',
             terveellisyysAste: '1'
         },
         {
             id: 3,
             nimi: 'Peruna',
+            ainekset: ['Sokeri ', 'Suola ', 'Maksa ', 'Kala '],
             kalorit: '1000kcal',
             terveellisyysAste: '1'
         },
         {
             id: 4,
             nimi: 'Kala',
+            ainekset: ['Sokeri ', 'Suola ', 'Maksa ', 'Kala '],
             kalorit: '2000kcal',
             terveellisyysAste: '2'
         },
         {
             id: 5,
             nimi: 'Maksa',
+            ainekset: ['Sokeri ', 'Suola ', 'Maksa ', 'Kala '],
             kalorit: '230kcal',
             terveellisyysAste: '4'
         },
         {
             id: 6,
             nimi: 'Suola',
+            ainekset: ['Sokeri ', 'Suola ', 'Maksa ', 'Kala '],
             kalorit: '30kcal',
             terveellisyysAste: '2'
         },
         {
             id: 7,
             nimi: 'Vehnäjauho',
+            ainekset: ['Sokeri ', 'Suola ', 'Maksa ', 'Kala '],
             kalorit: '50kcal',
             terveellisyysAste: '1'
         }
